@@ -1,9 +1,12 @@
+#ifndef PACIENTE_H
+#define PACIENTE_H
 #include <string>
-
-class Paciente{
+#include "personaosi.h"
+class Paciente:public Persona{
     public:
-        Paciente(int Peso, float Altura, std::string EnfermedadC)
-		: peso(Peso), altura(Altura), enfermedad_c(EnfermedadC)
+        Paciente(std::string Nombre,std::string Apellido,int Edad,std::string Genero,
+				 int Peso, float Altura, std::string EnfermedadC)
+		: Persona(Nombre,Apellido,Edad,Genero),peso(Peso), altura(Altura), enfermedad_c(EnfermedadC)
 		{};
         void setPeso(int nuevoPeso){
             peso=nuevoPeso;
@@ -29,3 +32,4 @@ class Paciente{
 		float altura;
         std::string enfermedad_c;    
 };
+#endif
