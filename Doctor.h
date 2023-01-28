@@ -1,11 +1,14 @@
+#ifndef DOCTOR_H
+#define DOCTOR_H
 #include <iostream>
 #include <string>
-
-class Doctor{
+#include "Trabajador.h"
+class Doctor:public Trabajador{
 public:
-    Doctor(std::string Especialidad, std::string GradoDeEspecialidad, int AñosDeExp)
-    :especialidad{Especialidad},gradoDeEspecialidad{GradoDeEspecialidad}{
-        añosDeExp=AñosDeExp;
+    Doctor(std::string Nombre,std::string Apellido,int Edad,std::string Genero,int Sueldo,std::string Oficio,std::string Horario,
+		   std::string Especialidad, std::string GradoDeEspecialidad, int AniosDeExp)
+    :Trabajador(Nombre,Apellido,Edad,Genero,Sueldo,Oficio,Horario),especialidad{Especialidad},gradoDeEspecialidad{GradoDeEspecialidad}{
+        aniosDeExp=AniosDeExp;
     }
     void setEspecialidad(std::string nuevaEspecialidad){
         especialidad=nuevaEspecialidad;
@@ -13,8 +16,8 @@ public:
     void setGradoDeEspecialidad(std::string nuevoGradoDeEspecialidad){
         gradoDeEspecialidad=nuevoGradoDeEspecialidad;
     }
-    void setAñosDeExp(int nuevoAñosDeExp){
-        añosDeExp=nuevoAñosDeExp;
+    void setAniosDeExp(int nuevoAniosDeExp){
+        aniosDeExp=nuevoAniosDeExp;
     }
     std::string getEspecialidad(){
         return especialidad;
@@ -22,10 +25,11 @@ public:
     std::string getGradoDeEspecialidad(){
         return  gradoDeEspecialidad;
     }
-    int getAñosDeExp(){
-        return añosDeExp;
+    int getAniosDeExp(){
+        return aniosDeExp;
     }
 private:
     std::string especialidad,gradoDeEspecialidad;
-    int añosDeExp;
+    unsigned int aniosDeExp;
 };
+#endif
