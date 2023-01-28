@@ -1,11 +1,14 @@
+#ifndef PERSONA_H
+#define PERSONA_H
 #include <iostream>
-class personaosi {
+class Persona {
 public:
-	personaosi(std::string Nombre,std::string Apellido,int Edad,std::string Genero)
+	Persona(std::string Nombre,std::string Apellido,int Edad,std::string Genero)
 		:personaNombre(Nombre),personaApellido(Apellido),personaGenero(Genero){
 		if (Edad>1 && Edad<100)
 			personaEdad=Edad;
 	}
+	Persona(){};
 	void setNombre(std::string Nombre){
 		personaNombre=Nombre;
 	}
@@ -36,7 +39,9 @@ public:
 private:
 	std::string personaNombre;
 	std::string personaApellido;
-	int personaEdad{1};
+	unsigned int personaEdad{1};
 	std::string personaGenero;
 };
+
+#endif
 
