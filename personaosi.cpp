@@ -29,7 +29,7 @@ int main() {
 	//Cuando lo hayan creado, pongan la direccion de ese archivo y listo xd. 
 	//pa comprobar, corren el programa normal y cuando se acabe van a revisar el txt y listo.
 	//reciben "K" porque taba pensando en hacerlo bucle pa guardar mas datos d personas xd.
-	string filename("d:\\programitas\\Prueba\\Prueba.txt");
+	string filename("d:\\programitas\\Prueba\\Prueba.txt");//Aca ponen la direccion del archivo txt.
 	fstream file;  
 	
 	file.open(filename, std::ios_base::out); 
