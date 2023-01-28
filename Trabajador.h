@@ -1,12 +1,12 @@
+#ifndef TRABAJADOR_H
+#define TRABAJADOR_H
 #include <iostream>
 #include <string>
-
-class Trabajador{
+#include "personaosi.h"
+class Trabajador:public Persona{
 public:
-    Trabajador(int Sueldo,std::string Oficio,std::string Horario)
-    : oficio{Oficio}, horario{Horario}{
-        sueldo=Sueldo;
-    }
+    Trabajador(std::string Nombre,std::string Apellido,int Edad,std::string Genero,int Sueldo,std::string Oficio,std::string Horario)
+	:Persona(Nombre,Apellido,Edad,Genero),sueldo(Sueldo),oficio(Oficio), horario(Horario){}
     void setSueldo(int nuevoSueldo){
         sueldo=nuevoSueldo;
     }
@@ -16,16 +16,17 @@ public:
     void setHorario(std::string nuevoHorario){
         horario=nuevoHorario;
     }
-    int getSueldo(){
+    int getSueldo()const{
         return sueldo;
     }
-    std::string getOficio(){
+    std::string getOficio()const{
         return oficio;
     }
-    std::string getHorario(){
+    std::string getHorario()const{
         return horario;
     }
 private:
+	int sueldo{0};
     std::string oficio,horario;
-    int sueldo;
 };
+#endif
